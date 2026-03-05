@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - Santo Colosi</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 0; background-color: #f4f4f9; }
+        header { background: #2c3e50; color: #ffffff; padding: 2.5rem 1rem; text-align: center; }
+        nav { background: #34495e; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; flex-wrap: wrap; }
+        nav a { color: white; text-decoration: none; padding: 15px 20px; display: block; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; transition: 0.3s; }
+        nav a:hover { background: #3498db; }
+        .container { background: #fff; padding: 30px; margin: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        
+        .contact-box { background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd; margin-top: 20px; }
+        .email-link { font-size: 1.2rem; color: #e67e22; font-weight: bold; text-decoration: none; border-bottom: 2px solid transparent; transition: 0.3s; }
+        .email-link:hover { border-bottom: 2px solid #e67e22; }
+        
+        /* Stile per un eventuale form futuro */
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background: #3498db; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        button:hover { background: #2980b9; }
+
+        footer { text-align: center; padding: 30px; font-size: 0.8rem; color: #7f8c8d; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Contattami</h1>
+    <p>Hai domande, proposte o vuoi collaborare? Sono a tua disposizione.</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chi-sono.html">Chi sono</a></li>
+        <li><a href="excel-vba.html">Excel & VBA</a></li>
+        <li><a href="old-languages.html">Old Languages</a></li>
+        <li><a href="app-commerciali.html">App Commerciali</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <h2>Mettiamoci in contatto</h2>
+    <p>Se sei interessato a una consulenza, vuoi approfondire uno dei miei progetti o semplicemente scambiare due chiacchiere sull'informatica "di una volta", puoi scrivermi direttamente.</p>
+    
+    <div class="contact-box">
+        <p><strong>Puoi inviarmi un'email a:</strong></p>
+       <a href="mailto:essecgest@libero.it?subject=Contatto dal sito Santo Colosi" class="email-link">essecgest@libero.it</a>
+        <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">
+            <em>Rispondo solitamente entro 24/48 ore.</em>
+        </p>
+    </div>
+
+    <h3>Progetti Personalizzati</h3>
+    <p>Dato il mio background commerciale e tecnico, sono disponibile per la creazione di:</p>
+    <ul>
+        <li>Fogli Excel avanzati per gestione aziendale.</li>
+        <li>Automazioni VBA per ridurre i tempi di lavoro ripetitivo.</li>
+        <li>Manutenzione o recupero di software in linguaggi classici.</li>
+    </ul>
+</div>
+
+<footer>
+    &copy; <span id="anno-corrente"></span> Santo Colosi - Logica e Codice.
+</footer>
+
+<script>
+    document.getElementById('anno-corrente').innerHTML = new Date().getFullYear();
+</script>
+
+</body>
+</html>
