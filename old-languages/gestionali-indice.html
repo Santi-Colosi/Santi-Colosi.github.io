@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indice Gestionali - Logica e Codice</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Stili specifici per la lista dei progetti */
+        .project-entry {
+            background: #fff;
+            border-left: 5px solid #e74c3c;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+        }
+
+        .project-entry:hover {
+            transform: translateX(10px);
+            background: #fdfdfd;
+        }
+
+        .project-entry h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .tag {
+            background: #3498db;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .btn-view {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .btn-view:hover {
+            background: #e74c3c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header style="background: #2c3e50; color: white; text-align: center; padding: 2rem;">
+        <h1>Archivio Software Gestionali</h1>
+        <p>Soluzioni software per l'organizzazione e il business</p>
+    </header>
+
+    <nav style="background: #34495e; padding: 10px; text-align: center;">
+    <a href="../index.html" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Home</a>
+    <a href="../old-languages.html" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Torna a Old Languages</a>
+</nav>
+
+    <div style="max-width: 900px; margin: 30px auto; padding: 0 20px;">
+
+        <h2>Progetti Disponibili</h2>
+        <p>In questa sezione sono raccolti i software dedicati alla gestione di magazzino, clienti e flussi operativi.
+        </p>
+
+        <div class="project-entry">
+            <span class="tag">C++ / VS Code</span>
+            <h3>Evoluzione Magazzino</h3>
+            <p>Analisi tecnica del passaggio dal vecchio sistema di gestione record (Dev-C++) allo standard C++20
+                moderno. Gestione file binari e tabelle CSV.</p>
+            <a href="tutorial/evoluzione-magazzino.html" class="btn-view">Vai al Tutorial &rarr;</a>
+        </div>
+
+        <div class="project-entry" style="opacity: 0.7;">
+            <span class="tag" style="background: #9b59b6;">Visual Basic 2012</span>
+            <h3>Gestione Anagrafica Clienti</h3>
+            <p>Software per l'archiviazione e la ricerca rapida dei contatti aziendali con interfaccia grafica classica.
+            </p>
+            <span style="font-style: italic; font-size: 0.8rem;">Prossimamente disponibile...</span>
+        </div>
+
+    </div>
+
+    <footer style="text-align: center; padding: 40px; color: #7f8c8d; font-size: 0.8rem;">
+        &copy; Santo Colosi - Logica e Codice
+    </footer>
+
+</body>
+
+</html>

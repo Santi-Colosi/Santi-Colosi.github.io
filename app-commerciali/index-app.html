@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogo App Commerciali - Santo Colosi</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 1000px; margin: 0 auto; padding: 0; background-color: #f4f4f9; }
+    header { background: #2c3e50; color: #ffffff; padding: 2.5rem 1rem; text-align: center; }
+    nav { background: #34495e; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; }
+    nav a { color: white; text-decoration: none; padding: 15px 20px; display: block; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; transition: 0.3s; }
+    nav a:hover { background: #3498db; }
+    
+    .container { background: #fff; padding: 30px; margin: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+    h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 30px; }
+
+    /* Griglia delle App */
+    .grid-app { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .card-app { border: 1px solid #eee; border-radius: 8px; padding: 20px; background: #fff; transition: 0.3s; display: flex; flex-direction: column; }
+    .card-app:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-color: #3498db; }
+    .card-app h3 { margin-top: 0; color: #2c3e50; }
+    .card-app p { font-size: 0.9rem; flex-grow: 1; }
+    
+    .btn-view { display: inline-block; background: #3498db; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; font-weight: bold; text-align: center; margin-top: 15px; }
+    .btn-view:hover { background: #2980b9; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Software & Gestionali</h1>
+    <p>Soluzioni professionali in Excel VBA per la tua attività</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../excel-vba.html">Tutorial Excel</a></li>
+      <li><a href="../contatti.html">Contatti</a></li>
+    </ul>
+  </nav>
+<div class="container">
+    <a href="../app-commerciali.html" class="back-link">&larr; Torna a home app commerciali &amp; VBA</a>
+  <div class="container">
+    <h2>App Disponibili</h2>
+    
+    <div class="grid-app">
+      <div class="card-app">
+        <h3>EsseC-Log_VBase Demo</h3>
+        <p>Gestione magazzino avanzata con Userform, inventario real-time, analisi utile netto e indice di rotazione.</p>
+        <a href="esseclogdemo.html" class="btn-view">Dettagli e Demo</a>
+      </div>
+
+      <div class="card-app" style="border-style: dashed; opacity: 0.6;">
+        <h3>Prossimamente...</h3>
+        <p>Nuovi gestionali per fatturazione e database clienti sono attualmente in fase di sviluppo.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div style="text-align: center; padding: 20px; color: #7f8c8d; font-size: 0.8rem;">
+      &copy; <span id="anno-corrente"></span> Santo Colosi - Logica e Codice.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('anno-corrente').innerHTML = new Date().getFullYear();
+  </script>
+</body>
+</html>

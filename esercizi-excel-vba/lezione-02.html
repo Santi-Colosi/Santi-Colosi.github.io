@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riferimenti Relativi e Assoluti - Santo Colosi</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 0; background-color: #f4f4f9; }
+    header { background: #2c3e50; color: #ffffff; padding: 2.5rem 1rem; text-align: center; }
+    nav { background: #34495e; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; padding: 15px 20px; display: block; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; transition: 0.3s; }
+    nav a:hover { background: #3498db; }
+    .container { background: #fff; padding: 30px; margin: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-top: 30px; }
+    h3 { color: #2980b9; margin-top: 25px; }
+    .back-link { display: inline-block; margin-bottom: 20px; color: #3498db; text-decoration: none; font-weight: bold; }
+    .back-link:hover { text-decoration: underline; }
+    
+    /* Tabelle stile Excel */
+    .excel-table { width: 100%; border-collapse: collapse; text-align: center; margin: 20px 0; font-size: 0.95rem; }
+    .excel-table th, .excel-table td { border: 1px solid #ccc; padding: 8px; }
+    .header-row { background-color: #ecf0f1; font-weight: bold; }
+    .col-ref { background-color: #f8f9fa; font-weight: bold; width: 50px; }
+    
+    .formula-box { background: #f1f2f6; border-left: 5px solid #e67e22; padding: 15px; font-family: 'Courier New', monospace; margin: 15px 0; }
+    .key-concept { background: #fff3cd; border: 1px solid #ffeeba; padding: 15px; border-radius: 5px; margin: 20px 0; }
+    footer { text-align: center; padding: 30px; font-size: 0.8rem; color: #7f8c8d; }
+  </style>
+</head>
+
+<body>
+<header>
+    <h1>Excel: La Logica delle Celle e i Riferimenti</h1>
+    <p>Comprendere la differenza tra Riferimenti Relativi e Assoluti ($)</p>
+</header>
+
+<nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="tutorial-indice.html">Indice Tutorial</a></li>
+      <li><a href="../excel-vba.html">Excel &amp; VBA</a></li>
+      <li><a href="../contatti.html">Contatti</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <a href="../excel-vba.html" class="back-link">&larr; Torna all'elenco Excel &amp; VBA</a>
+
+    <h2>Obiettivo dell'esercizio</h2>
+    <p>Imparare come Excel gestisce le coordinate delle celle nelle formule e come queste si aggiornano (o restano bloccate) durante la copia o il trascinamento.</p>
+    
+    <ul>
+      <li>Scrivere formule dinamiche basate sulla posizione.</li>
+      <li>Comprendere l'automatismo dei <strong>riferimenti relativi</strong>.</li>
+      <li>Utilizzare il simbolo <strong>$</strong> per creare <strong>riferimenti assoluti</strong>.</li>
+    </ul>
+
+    <h2>Parte 1: Il Riferimento Relativo</h2>
+    <p>Excel non lavora solo con numeri fissi, ma con la "posizione" delle celle. Quando trasciniamo una formula, Excel sposta i riferimenti seguendo il movimento del mouse.</p>
+
+    <h3>1. Preparazione della tabella</h3>
+    <table class="excel-table">
+      <tr class="header-row">
+        <td class="col-ref"></td>
+        <td>A (Numero 1)</td>
+        <td>B (Numero 2)</td>
+        <td>C (Somma)</td>
+      </tr>
+      <tr><td class="col-ref">2</td><td>10</td><td>5</td><td><em>(formula)</em></td></tr>
+      <tr><td class="col-ref">3</td><td>20</td><td>10</td><td><em>(da trascinare)</em></td></tr>
+      <tr><td class="col-ref">4</td><td>30</td><td>15</td><td><em>(da trascinare)</em></td></tr>
+    </table>
+
+    <p><img alt="Screenshot tabella iniziale" src="template/screenshot_riferimenti-01.png" width="100%"></p>
+
+    <h3>2. Scrivere e trascinare la formula</h3>
+    <p>Clicca sulla cella <strong>C2</strong> e digita:</p>
+    <div class="formula-box">=A2+B2</div>
+    
+    <p>Usa la <strong>maniglia di riempimento</strong> (il quadratino verde in basso a destra) e trascina fino alla cella <strong>C4</strong>. Noterai che:</p>
+    <ul>
+      <li>In C3 la formula è diventata automaticamente <code>=A3+B3</code></li>
+      <li>In C4 la formula è diventata automaticamente <code>=A4+B4</code></li>
+    </ul>
+    
+    <div class="key-concept">
+        <strong>Nota:</strong> Questo comportamento si chiama <strong>Riferimento Relativo</strong>. Excel assume che se ti sposti in basso di una riga, anche i dati da sommare si trovino una riga più in basso.
+    </div>
+
+    
+
+    <h2>Parte 2: Il Riferimento Assoluto ($)</h2>
+    <p>A volte abbiamo bisogno che un valore nella formula resti <strong>fisso</strong>, anche se trasciniamo la formula in altre celle. È il caso tipico dell'aliquota IVA, di una percentuale di sconto o di un tasso di cambio.</p>
+
+    <h3>1. Creazione tabella con IVA</h3>
+    <table class="excel-table">
+      <tr class="header-row">
+        <td class="col-ref"></td>
+        <td>A (Prodotto)</td>
+        <td>B (Prezzo Netto)</td>
+        <td>C (Prezzo con IVA)</td>
+        <td style="background-color: #fff;"></td>
+        <td style="background-color: #ffeaa7;">F (Aliquota)</td>
+      </tr>
+      <tr>
+        <td class="col-ref">2</td>
+        <td>Monitor</td>
+        <td>100,00</td>
+        <td><em>(formula)</em></td>
+        <td></td>
+        <td style="border: 2px solid #d63031;"><strong>22%</strong></td>
+      </tr>
+    </table>
+    
+    <p><img alt="Tabella riferimento assoluto" src="template/screenshot_riferimenti-03.jpg" width="100%"></p>
+
+    <h3>2. Il problema del trascinamento senza blocco</h3>
+    <p>Se scrivessimo in C2 <code>=B2*(1+F1)</code> e trascinassimo verso il basso, Excel cercherebbe l'IVA nelle celle F2, F3, ecc., che sono vuote. Il risultato sarebbe un errore o un calcolo sbagliato.</p>
+
+    <h3>3. La soluzione: bloccare la cella con il simbolo $</h3>
+    <p>Per "congelare" il riferimento all'IVA, dobbiamo aggiungere il simbolo del dollaro davanti alla colonna e alla riga:</p>
+    
+    <div class="formula-box">
+        Formula corretta in C2: <strong>=B2 * (1 + $F$1)</strong>
+    </div>
+
+    
+
+    <p>Ora, trascinando la formula verso il basso, otterrai:</p>
+    <ul>
+        <li>In C3: <code>=B3 * (1 + $F$1)</code></li>
+        <li>In C4: <code>=B4 * (1 + $F$1)</code></li>
+    </ul>
+
+    <p><img alt="Risultato con riferimento assoluto" src="template/screenshot_riferimenti-A01.png" width="350"></p>
+
+    <div class="key-concept">
+        <strong>Regola d'oro:</strong> Usa il simbolo <strong>$</strong> quando la tua formula deve puntare sempre alla stessa cella (tasse, sconti fissi, costanti), indipendentemente da dove la copi.
+    </div>
+
+    <h2>Competenze acquisite</h2>
+    <ul>
+      <li><strong>Riferimento Relativo:</strong> Le coordinate cambiano seguendo il movimento della copia.</li>
+      <li><strong>Riferimento Assoluto:</strong> Il simbolo <strong>$</strong> blocca la cella (es. $A$1).</li>
+      <li><strong>Maniglia di riempimento:</strong> Strumento per copiare velocemente logiche di calcolo.</li>
+    </ul>
+</div>
+
+<footer>&copy; <span id="anno-corrente"></span> Santo Colosi - Logica e Codice.</footer>
+
+<script type="text/javascript">
+    document.getElementById('anno-corrente').innerHTML = new Date().getFullYear();
+</script>
+</body>
+</html>

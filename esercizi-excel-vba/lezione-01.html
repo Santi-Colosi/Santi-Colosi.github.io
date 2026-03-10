@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduzione all'interfaccia Excel - Santo Colosi</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 0; background-color: #f4f4f9; }
+    header { background: #2c3e50; color: #ffffff; padding: 2rem 1rem; text-align: center; }
+    nav { background: #34495e; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; padding: 15px 20px; display: block; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; transition: 0.3s; }
+    nav a:hover { background: #3498db; }
+    .container { background: #fff; padding: 30px; margin: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+    h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-top: 30px; }
+    h3 { color: #2980b9; margin-top: 20px; }
+    .back-link { display: inline-block; margin-bottom: 20px; color: #3498db; text-decoration: none; font-weight: bold; }
+    .back-link:hover { text-decoration: underline; }
+    
+    /* Tabelle stile Excel */
+    .excel-table { width: 100%; border-collapse: collapse; text-align: center; margin: 20px 0; }
+    .excel-table td { border: 1px solid #ccc; padding: 8px; }
+    .header-row { background-color: #ecf0f1; font-weight: bold; }
+    .col-ref { background-color: #f8f9fa; font-weight: bold; width: 40px; }
+
+    .info-box { background: #e8f4f8; border-left: 5px solid #3498db; padding: 15px; margin: 20px 0; border-radius: 4px; }
+    footer { text-align: center; padding: 30px; font-size: 0.8rem; color: #7f8c8d; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Introduzione all'interfaccia di Excel</h1>
+    <p>Guida pratica per muovere i primi passi nel foglio di calcolo</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="tutorial-indice.html">Indice Tutorial</a></li>
+      <li><a href="../excel-vba.html">Excel &amp; VBA</a></li>
+      <li><a href="../contatti.html">Contatti</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <a href="../excel-vba.html" class="back-link">&larr; Torna all'elenco Excel &amp; VBA</a>
+
+    <h2>Obiettivo dell'esercizio</h2>
+    <p>Imparare a riconoscere e utilizzare gli elementi principali dell'interfaccia di Excel: la barra multifunzione, le celle, i fogli di lavoro e gli strumenti di base per organizzare i dati.</p>
+
+    <ul>
+      <li>Navigare tra le parti principali dell'interfaccia.</li>
+      <li>Inserire e gestire dati elementari.</li>
+      <li>Muoversi velocemente tra celle e fogli.</li>
+      <li>Salvare correttamente il proprio lavoro.</li>
+    </ul>
+
+    <h2>1. Avvio e Primi Passi</h2>
+    <p><img alt="Schermata avvio" src="template/screenshot-1.png" width="100%"></p>
+    <ol>
+      <li>Apri il menu <strong>Start</strong> del computer.</li>
+      <li>Digita <strong>Excel</strong> nella barra di ricerca e avvia il programma.</li>
+      <li>Seleziona <strong>Cartella di lavoro vuota</strong> nella schermata iniziale.</li>
+    </ol>
+
+    <h2>2. Gli elementi dell'Interfaccia</h2>
+    <p><img alt="Interfaccia Excel" src="template/screenshot-2.png" width="100%"></p>
+    
+    <div class="info-box">
+      <strong>Barra Multifunzione (Ribbon):</strong> In alto, contiene schede come <em>Home, Inserisci, Formule</em>. Ogni scheda raggruppa comandi specifici.<br><br>
+      <strong>Barra della Formula:</strong> Fondamentale per vedere cosa c'è "dentro" una cella (testo o calcoli).<br><br>
+      <strong>Celle:</strong> Ogni quadratino è una cella, identificata da una lettera (Colonna) e un numero (Riga), ad esempio <strong>A1</strong>.
+    </div>
+
+    <h2>3. Inserimento dei Dati</h2>
+    <p>Proviamo a costruire una piccola rubrica inserendo i dati come mostrato in tabella:</p>
+
+    <table class="excel-table">
+      <tr class="header-row">
+        <td class="col-ref"></td>
+        <td>A</td>
+        <td>B</td>
+      </tr>
+      <tr><td class="col-ref">1</td><td><strong>Nome</strong></td><td><strong>Et&agrave;</strong></td></tr>
+      <tr><td class="col-ref">2</td><td>Luca</td><td>22</td></tr>
+      <tr><td class="col-ref">3</td><td>Maria</td><td>25</td></tr>
+      <tr><td class="col-ref">4</td><td>Paolo</td><td>19</td></tr>
+    </table>
+
+    <p><img alt="Inserimento dati" src="template/screenshot-3.png" width="100%"></p>
+
+    <h3>Suggerimenti per la navigazione:</h3>
+    <ul>
+      <li><strong>INVIO:</strong> Ti sposta nella cella subito sotto.</li>
+      <li><strong>TAB:</strong> Ti sposta nella cella a destra.</li>
+      <li><strong>Frecce Direzionali:</strong> Per muoverti liberamente nella griglia.</li>
+    </ul>
+
+    <h2>4. Salvataggio del Lavoro</h2>
+    <ol>
+      <li>Clicca sulla scheda <strong>File</strong> in alto a sinistra.</li>
+      <li>Seleziona <strong>Salva con nome</strong>.</li>
+      <li>Scegli la cartella di destinazione (es. Documenti).</li>
+      <li>Assegna il nome <strong>"Esercizio Excel Base"</strong> e clicca su Salva.</li>
+    </ol>
+    <p>Il file verrà salvato con l'estensione standard <strong>.xlsx</strong>.</p>
+
+    <div class="info-box" style="border-left-color: #27ae60; background-color: #ebfaf0;">
+      <strong>Competenze acquisite:</strong> Ora sai come aprire un file, identificare le celle, inserire testi e numeri e mettere in sicurezza il tuo lavoro salvandolo sul PC.
+    </div>
+
+  </div>
+
+  <footer>&copy; <span id="anno-corrente"></span> Santo Colosi - Logica e Codice.</footer>
+
+  <script type="text/javascript">
+    document.getElementById('anno-corrente').innerHTML = new Date().getFullYear();
+  </script>
+</body>
+</html>

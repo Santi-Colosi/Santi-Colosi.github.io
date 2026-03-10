@@ -1,64 +1,153 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santo Colosi - Logica e Codice</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 0; background-color: #f4f4f9; }
-        header { background: #2c3e50; color: #ffffff; padding: 3rem 1rem; text-align: center; }
-        nav { background: #34495e; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; flex-wrap: wrap; }
-        nav a { color: white; text-decoration: none; padding: 15px 20px; display: block; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; transition: 0.3s; }
-        nav a:hover { background: #3498db; }
-        .container { background: #fff; padding: 40px; margin: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        .features { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px; }
-        .features li { background: #ecf0f1; padding: 15px; border-left: 5px solid #3498db; border-radius: 4px; }
-        .highlight { color: #e67e22; font-weight: bold; }
-        footer { text-align: center; padding: 30px; font-size: 0.8rem; color: #7f8c8d; }
-        @media (max-width: 600px) { .features { grid-template-columns: 1fr; } }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background: #2c3e50;
+            color: #ffffff;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background: #34495e;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #3498db;
+        }
+
+        .container {
+            background: #fff;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .features li {
+            background: #ecf0f1;
+            padding: 15px;
+            border-left: 5px solid #3498db;
+            border-radius: 4px;
+        }
+
+        .highlight {
+            color: #e67e22;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.8rem;
+            color: #7f8c8d;
+        }
+
+        @media (max-width: 600px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Benvenuto nel mio spazio dedicato alla programmazione pratica</h1>
-    <p>Condividere esperienze, progetti e riflessioni sull'informatica</p>
-</header>
+    <header>
+        <h1>Benvenuto nel mio spazio dedicato alla programmazione pratica</h1>
+        <p>Condividere esperienze, progetti e riflessioni sull'informatica</p>
+    </header>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="chi-sono.html">Chi sono</a></li>
-        <li><a href="excel-vba.html">Excel & VBA</a></li>
-        <li><a href="old-languages.html">Old Languages</a></li>
-        <li><a href="app-commerciali.html">App Commerciali</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-    </ul>
-</nav>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="chi-sono.html">Chi sono</a></li>
+            <li><a href="excel-vba.html">Excel & VBA</a></li>
+            <li><a href="old-languages.html">Old Languages</a></li>
+            <li><a href="app-commerciali.html">App Commerciali</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+    </nav>
 
-<div class="container">
-    <p>Questo blog nasce per condividere esperienze, progetti e riflessioni maturate in anni di lavoro e passione per l’informatica.</p>
-    
-    <h2>Cosa troverai qui:</h2>
-    <ul class="features">
-        <li><strong>Tutorial</strong> Su Excel e VBA</li>
-        <li><strong>Articoli</strong> Dedicati ai linguaggi classici</li>
-        <li><strong>Progetti</strong> Utili e applicazioni reali</li>
-        <li><strong>Esercizi</strong> Guidati per imparare facendo</li>
-    </ul>
+    <div class="container">
+        <p>Questo sito nasce per condividere esperienze, progetti e riflessioni maturate in anni di lavoro e passione
+            per l’informatica.</p>
 
-    <p style="margin-top: 30px;">Se ami la <span class="highlight">programmazione pratica</span>, la logica e l’informatica “di una volta”, sei nel posto giusto.</p>
-</div>
+        <h2>Cosa troverai qui:</h2>
+        <ul class="features">
+            <li><strong>Tutorial</strong> Su Excel e VBA</li>
+            <li><strong>Articoli</strong> Dedicati ai linguaggi classici</li>
+            <li><strong>Progetti</strong> Utili e applicazioni reali</li>
+            <li><strong>Esercizi</strong> Guidati per imparare facendo</li>
+        </ul>
 
-<footer>
-    &copy; <span id="anno-corrente"></span> Santo Colosi - Logica e Codice.
-</footer>
+        <p style="margin-top: 30px;">Se ami la <span class="highlight">programmazione pratica</span>, la logica e
+            l’informatica “di una volta”, sei nel posto giusto.</p>
+    </div>
 
-<script>
-    document.getElementById('anno-corrente').innerHTML = new Date().getFullYear();
-</script>
+    <footer>
+        &copy; <span id="anno-corrente"></span> Santo Colosi - Logica e Codice.
+    </footer>
+
+    <script>
+        document.getElementById('anno-corrente').innerHTML = new Date().getFullYear();
+    </script>
 
 </body>
+
 </html>

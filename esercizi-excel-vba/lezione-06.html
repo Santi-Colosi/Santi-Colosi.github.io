@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lezione 06: Funzioni Condizionali - Santo Colosi</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+
+    header {
+      background: #2c3e50;
+      color: #ffffff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    nav {
+      background: #34495e;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      display: block;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #3498db;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px;
+      margin: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+      margin-top: 30px;
+    }
+
+    h3 {
+      color: #2980b9;
+      margin-top: 25px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #3498db;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .excel-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      margin: 20px 0;
+      font-size: 0.9rem;
+    }
+
+    .excel-table th,
+    .excel-table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+
+    .header-row {
+      background-color: #ecf0f1;
+      font-weight: bold;
+    }
+
+    .col-ref {
+      background-color: #f8f9fa;
+      font-weight: bold;
+      width: 40px;
+    }
+
+    .formula-box {
+      background: #2d3436;
+      color: #fab1a0;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: 'Courier New', monospace;
+      margin: 15px 0;
+      border-left: 5px solid #e67e22;
+    }
+
+    .highlight {
+      background-color: #fff3cd;
+      padding: 2px 5px;
+      font-weight: bold;
+      border-radius: 3px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.8rem;
+      color: #7f8c8d;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Tutorial Excel: La Logica del "SE"</h1>
+    <p>Imparare a filtrare e sommare dati in base a condizioni specifiche</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="tutorial-indice.html">Indice Tutorial</a></li>
+      <li><a href="../excel-vba.html">Excel &amp; VBA</a></li>
+      <li><a href="../contatti.html">Contatti</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <a href="tutorial-indice.html" class="back-link">&larr; Torna all'Indice Tutorial</a>
+
+    <h2>1. La funzione SE (Logica pura)</h2>
+    <p>La funzione <strong>SE</strong> permette a Excel di prendere decisioni. La struttura &egrave; semplice: <em>"Se
+        succede questo, scrivi A, altrimenti scrivi B"</em>.</p>
+
+    <div class="formula-box">
+      =SE(Test_Logico; Valore_se_vero; Valore_se_falso)
+    </div>
+
+
+
+    <h3>Esercizio Pratico: Controllo Pagamenti</h3>
+    <table class="excel-table">
+      <tr class="header-row">
+        <td class="col-ref"></td>
+        <td>A (Fattura)</td>
+        <td>B (Importo)</td>
+        <td>C (Stato)</td>
+        <td>D (Esito SE)</td>
+      </tr>
+      <tr>
+        <td class="col-ref">2</td>
+        <td>001/24</td>
+        <td>1.200 &euro;</td>
+        <td>Pagato</td>
+        <td>=SE(C2="Pagato";"OK";"Sollecitare")</td>
+      </tr>
+      <tr>
+        <td class="col-ref">3</td>
+        <td>002/24</td>
+        <td>850 &euro;</td>
+        <td>In attesa</td>
+        <td><em>(trascina)</em></td>
+      </tr>
+    </table>
+
+    <h2>2. SOMMA.SE vs SOMMA.PI&Ugrave;</h2>
+    <p>Queste funzioni servono per sommare valori solo se rispettano uno o pi&ugrave; criteri. &Egrave; qui che iniziamo
+      a preparare la logica per il nostro <strong>Database Fatture</strong>.</p>
+
+    <h3>A. SOMMA.SE (Criterio singolo)</h3>
+    <p>Somma gli importi solo per un determinato cliente.</p>
+    <div class="formula-box">
+      =SOMMA.SE(Intervallo_Nomi; "Cliente Rossi"; Intervallo_Importi)
+    </div>
+
+    <h3>B. SOMMA.PI&Ugrave; (Criteri multipli)</h3>
+    <p>Somma gli importi di un cliente, ma <strong>solo se</strong> le fatture risultano "Pagate".</p>
+    <div class="formula-box">
+      =SOMMA.PI&Ugrave;(Intervallo_Importi; Intervallo_Nomi; "Rossi"; Intervallo_Stato; "Pagato")
+    </div>
+
+
+
+    <h2>3. Laboratorio: Monitoraggio Clienti</h2>
+    <p>Crea questa tabella per confrontare le due funzioni:</p>
+
+    <table class="excel-table">
+      <tr class="header-row">
+        <td class="col-ref"></td>
+        <td>A (Cliente)</td>
+        <td>B (Importo)</td>
+        <td>C (Anno)</td>
+      </tr>
+      <tr>
+        <td class="col-ref">2</td>
+        <td>Rossi</td>
+        <td>500</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td class="col-ref">3</td>
+        <td>Bianchi</td>
+        <td>300</td>
+        <td>2024</td>
+      </tr>
+      <tr>
+        <td class="col-ref">4</td>
+        <td>Rossi</td>
+        <td>700</td>
+        <td>2024</td>
+      </tr>
+    </table>
+
+    <div class="info-box" style="background:#f1f2f6; padding:15px; border-radius:5px;">
+      <strong>Sfida:</strong> <br>
+      1. Somma tutto il fatturato di Rossi: <span class="highlight">=SOMMA.SE(A2:A4;"Rossi";B2:B4)</span> <br>
+      2. Somma il fatturato di Rossi solo per il 2024: <span
+        class="highlight">=SOMMA.PI&Ugrave;(B2:B4;A2:A4;"Rossi";C2:C4;2024)</span>
+    </div>
+
+    <h2>Prossimo Passo: Verso il Database Fatture</h2>
+    <p>Hai appena imparato come estrarre dati specifici da una lista disordinata. Nel prossimo modulo avanzato, useremo
+      queste basi per costruire un sistema professionale dove:</p>
+    <ul>
+      <li>Il <strong>CERCA.VERT</strong> compiler&agrave; l'anagrafica cliente.</li>
+      <li>Le funzioni <strong>INDICE/CONFRONTA</strong> gestiranno i listini prezzi dinamici.</li>
+      <li>Il <strong>SOMMA.PI&Ugrave;</strong> creer&agrave; un cruscotto (Dashboard) per vedere quanto ti deve ogni
+        singolo cliente.</li>
+    </ul>
+  </div>
+
+  <footer>&copy; <span id="anno-corrente"></span> Santo Colosi - Logica e Codice.</footer>
+
+  <script>
+    document.getElementById('anno-corrente').innerHTML = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

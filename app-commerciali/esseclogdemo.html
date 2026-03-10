@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EsseC-Log_VBase Demo - Santo Colosi</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+
+    header {
+      background: #2c3e50;
+      color: #ffffff;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    nav {
+      background: #34495e;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      display: block;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #3498db;
+    }
+
+    .container {
+      background: #fff;
+      padding: 40px;
+      margin: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .app-title {
+      color: #2c3e50;
+      border-bottom: 3px solid #3498db;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    /* Griglia Caratteristiche */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .feature-card {
+      background: #f8f9fa;
+      border: 1px solid #e1e4e8;
+      padding: 20px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-card h3 {
+      color: #2980b9;
+      margin-top: 0;
+    }
+
+    /* Box Versione Full */
+    .full-version-box {
+      background: #2c3e50;
+      color: white;
+      padding: 25px;
+      border-radius: 8px;
+      margin-top: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .full-version-box h2 {
+      color: #3498db;
+      margin-top: 0;
+    }
+
+    .full-version-box ul {
+      columns: 2;
+      -webkit-columns: 2;
+      -moz-columns: 2;
+    }
+
+    .btn-download {
+      display: inline-block;
+      background: #e67e22;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+
+    .btn-download:hover {
+      background: #d35400;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.8rem;
+      color: #7f8c8d;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>EsseC-Log_VBase</h1>
+    <p>Soluzione VBA professionale per la gestione intelligente del magazzino</p>
+    <p></p>
+    <p>Versione dimostrativa valida 30 gg</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../app-commerciali.html">App Commerciali</a></li>
+      <li><a href="../excel-vba.html">Excel &amp; VBA</a></li>
+      <li><a href="../contatti.html">Contatti</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <a href="index-app.html" class="back-link">&larr; Torna a indice App disponibili &amp; VBA</a>
+    <div></div>
+
+    <div class="container">
+      <h2 class="app-title">EsseC-Log Versione Base Demo</h2>
+      <p>
+        Benvenuti nella presentazione di <strong>EsseC-Log_VBase</strong>, un'applicazione sviluppata interamente in
+        Excel
+        VBA progettata per semplificare la logistica di piccole e medie realt&agrave;.
+        L'interfaccia si affida a <strong>Userform intuitive</strong> che trasformano il foglio di calcolo in un
+        software
+        gestionale fluido e moderno.
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>&Sigma; Gestione Movimenti</h3>
+          <p>Registrazione rapida di carichi e scarichi tramite maschera di gestione,consentendo l'input ottimizzato
+            anche tramite <strong>lettore codice a barre</strong> .
+            Include un <strong>calendario artigianale</strong> integrato per la selezione automatica delle date.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>&Sigma; Anagrafiche</h3>
+          <p>Database centralizzato per la gestione completa di <strong>Clienti e Fornitori</strong>, con campi
+            ottimizzati per il recupero immediato delle informazioni.</p>
+        </div>
+        <div class="feature-card">
+          <h3>&Sigma; Inventario Real-Time</h3>
+          <p>Foglio dedicato che restituisce il numero di pezzi venduti, resi o danneggiati, monitorando l'esistenza e
+            il
+            valore delle giacenze in tempo reale.</p>
+        </div>
+        <div class="feature-card">
+          <h3>&Sigma; Analisi Mensile</h3>
+          <p>Monitoraggio delle operazioni mese per mese tramite filtri in stile "Old Excel", con calcolo immediato
+            dell'<strong>utile netto</strong> e dell'<strong>indice di rotazione</strong>.</p>
+        </div>
+      </div>
+
+      <div class="full-version-box">
+        <h2>Disponibile Versione Ampliata</h2>
+        <p>Oltre alle funzioni della versione Demo, la release completa permette una gestione aziendale a 360 gradi:
+        </p>
+        <ul>
+          <li>Gestione completa Ordini Clienti</li>
+          <li>Emissione Documenti di Trasporto (DDT)</li>
+          <li>Fatturazione Immediata e Differita</li>
+          <li>Archivio Storico Documentale</li>
+          <li>Statistiche Avanzate di Vendita</li>
+        </ul>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px; padding: 20px; background: #ecf0f1; border-radius: 8px;">
+        <h3>Scarica la versione dimostrativa</h3>
+        <p style="font-size: 0.9rem; color: #7f8c8d;">Versione: 1.0 Beta | Formato: .ZIP (Contiene file .xlsm)</p>
+
+        <a href="download-app/EsseC-Log_VBase_demo.zip" class="btn-download" download>
+          📥 SCARICA ESSEC-LOG_VBASE DEMO
+        </a>
+
+        <p style="margin-top: 15px; font-size: 0.8rem; color: #e67e22;">
+          <strong>Nota:</strong> All'apertura del file Excel, clicca su "Abilita Contenuto" per far funzionare le
+          Userform VBA.
+        </p>
+      </div>
+
+    </div>
+
+    <footer>&copy; <span id="anno-corrente"></span> Santo Colosi - Logica e Codice.</footer>
+
+    <script>
+      document.getElementById('anno-corrente').innerHTML = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evoluzione Magazzino - Logica e Codice</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Logica e Codice</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../../old-languages.html">Home Old Languages</a></li>
+                <li><span style="color: #7f8c8d; cursor: not-allowed;">Progetti (In arrivo)</span></li>
+                <!-- <li><a href="../progetti.html">Progetti</a></li> -->
+
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <a></a>
+        <a href="../gestionali-indice.html" class="back-link">&larr; Torna all'indice tutorial &amp; VBA</a>
+        <div class="container">
+            <main>
+                <article class="case-study">
+                    <h2>Case Study: L'Evoluzione del Magazzino</h2>
+                    <p class="intro">Dal C++ "Old School" di Dev-C++ allo standard moderno in VS Code.</p>
+
+                    <section class="comparison">
+                        <h3>Confronto tra Metodologie</h3>
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th>Funzione</th>
+                                    <th>Metodo Dev-C++ (Passato)</th>
+                                    <th>Metodo VS Code (Presente)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><b>Stringhe</b></td>
+                                    <td><code>char nome[80]</code> (Rigido)</td>
+                                    <td><code>std::string</code> (Flessibile)</td>
+                                </tr>
+                                <tr>
+                                    <td><b>File</b></td>
+                                    <td><code>FILE * / fopen</code> (C puro)</td>
+                                    <td><code>std::fstream</code> (C++ Stream)</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Input</b></td>
+                                    <td><code>cin >> var</code> (Rischioso)</td>
+                                    <td><code>getline / cin.ignore</code> (Pulito)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+
+
+                    <section class="code-section">
+                        <h3>Snippet del Codice Moderno</h3>
+                        <p>Ecco come gestiamo ora il salvataggio in formato compatibile con Excel (CSV):</p>
+                        <pre>
+<code>
+void salvaFile() {
+    ofstream f("mag.dat");
+    for (int i = 0; i < nProdotti; i++) {
+        f << magazzino[i].codice << ";"
+          << magazzino[i].descrizione << ";"
+          << magazzino[i].quantita << endl;
+    }
+    f.close();
+}
+</code>
+            </pre>
+                    </section>
+
+                    <div class="note">
+                        <p><strong>Nota di Santo:</strong> Questo progetto dimostra come la logica di base rimanga la
+                            stessa, ma
+                            gli strumenti moderni ci permettono di scrivere codice più sicuro e leggibile.</p>
+                    </div>
+                </article>
+            </main>
+
+            <footer>
+                <p>&copy; 2026 Logica e Codice - Creato da Santo</p>
+            </footer>
+
+</body>
+
+</html>

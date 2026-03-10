@@ -1,82 +1,214 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Old Languages & Software - Santo Colosi</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 0; background-color: #f4f4f9; }
-        header { background: #2c3e50; color: #ffffff; padding: 2.5rem 1rem; text-align: center; }
-        nav { background: #34495e; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; flex-wrap: wrap; }
-        nav a { color: white; text-decoration: none; padding: 15px 20px; display: block; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; transition: 0.3s; }
-        nav a:hover { background: #3498db; }
-        .container { background: #fff; padding: 30px; margin: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h2 { color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px; margin-top: 30px; }
-        .highlight { color: #e67e22; font-weight: bold; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
-        .card { background: #fdfdfd; padding: 15px; border: 1px solid #eee; border-radius: 6px; text-align: center; border-bottom: 3px solid #e74c3c; }
-        .card strong { display: block; color: #c0392b; margin-bottom: 5px; text-transform: uppercase; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
 
-        .details { background: #f1f2f6; padding: 20px; border-radius: 8px; margin-top: 25px; }
-        .details ul { list-style: square; padding-left: 20px; }
-        
-        footer { text-align: center; padding: 30px; font-size: 0.8rem; color: #7f8c8d; }
+        header {
+            background: #2c3e50;
+            color: #ffffff;
+            padding: 2.5rem 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background: #34495e;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #3498db;
+        }
+
+        .container {
+            background: #fff;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        .highlight {
+            color: #e67e22;
+            font-weight: bold;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #fdfdfd;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            text-align: center;
+            border-bottom: 3px solid #e74c3c;
+        }
+
+        .card-link {
+            text-decoration: none;
+            /* Toglie la sottolineatura */
+            color: inherit;
+            /* Mantiene il colore del testo originale */
+            display: block;
+            /* Rende cliccabile tutta l'area della card */
+            transition: transform 0.2s;
+            /* Effetto zoom al passaggio del mouse */
+        }
+
+        .card-link:hover {
+            transform: scale(1.05);
+            /* Ingrandisce leggermente la card quando ci passi sopra */
+        }
+
+        .card:hover {
+            background-color: #fff5f5;
+            /* Un leggero cambio di colore allo sfondo */
+            cursor: pointer;
+
+            .card strong {
+                display: block;
+                color: #c0392b;
+                margin-bottom: 5px;
+                text-transform: uppercase;
+            }
+
+            .details {
+                background: #f1f2f6;
+                padding: 20px;
+                border-radius: 8px;
+                margin-top: 25px;
+            }
+
+            .details ul {
+                list-style: square;
+                padding-left: 20px;
+            }
+
+            footer {
+                text-align: center;
+                padding: 30px;
+                font-size: 0.8rem;
+                color: #7f8c8d;
+            }
     </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Old Languages & Software</h1>
-    <p>Applicazioni, strumenti e linguaggi che hanno fatto la storia</p>
-</header>
+    <header>
+        <h1>Old Languages & Software</h1>
+        <p>Applicazioni, strumenti e linguaggi che hanno fatto la storia</p>
+    </header>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="chi-sono.html">Chi sono</a></li>
-        <li><a href="excel-vba.html">Excel & VBA</a></li>
-        <li><a href="old-languages.html">Old Languages</a></li>
-        <li><a href="app-commerciali.html">App Commerciali</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-    </ul>
-</nav>
-
-<div class="container">
-    <h2>Applicazioni e strumenti disponibili</h2>
-    <p>In questa pagina presento una selezione di applicazioni sviluppate nel corso degli anni in <strong>Visual Basic 2012, Excel VBA e C++</strong>. Questi software sono nati per rispondere a esigenze concrete: migliorare la produttività aziendale o risolvere problemi tecnici specifici con la solidità dei linguaggi classici.</p>
-
-    <div class="grid">
-        <div class="card"><strong>Gestionali</strong>Semplici, snelli e personalizzabili.</div>
-        <div class="card"><strong>Strumenti Dati</strong>Per l'organizzazione e l'analisi massiva.</div>
-        <div class="card"><strong>Utility Ufficio</strong>Piccoli software per grandi risparmi di tempo.</div>
-        <div class="card"><strong>Didattica</strong>Applicazioni tecniche a scopo formativo.</div>
-    </div>
-
-    <h2>Cosa offro per ogni progetto</h2>
-    <p>La trasparenza è fondamentale. Per ogni software o script presentato, troverai sempre una documentazione chiara composta da:</p>
-    <div class="details">
+    <nav>
         <ul>
-            <li><strong>Descrizione completa:</strong> Lo scopo del software e il problema che risolve.</li>
-            <li><strong>Funzionalità principali:</strong> Cosa può fare concretamente l'applicazione.</li>
-            <li><strong>Requisiti tecnici:</strong> Sistema operativo o versioni di Excel necessarie.</li>
-            <li><strong>Disponibilità:</strong> Note sull'eventuale licenza d'uso o disponibilità commerciale.</li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="chi-sono.html">Chi sono</a></li>
+            <li><a href="excel-vba.html">Excel & VBA</a></li>
+            <li><a href="app-commerciali.html">App Commerciali</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
         </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Applicazioni e strumenti disponibili</h2>
+        <p>In questa pagina presento una selezione di applicazioni sviluppate nel corso degli anni in <strong>Visual
+                Basic 2012, Excel VBA e C++</strong>. Questi software sono nati per rispondere a esigenze concrete:
+            migliorare la produttività aziendale o risolvere problemi tecnici specifici con la solidità dei linguaggi
+            classici.</p>
+
+        <div class="grid">
+            <a href="old-languages/gestionali-indice.html" class="card-link">
+                <div class="card"><strong>Gestionali</strong>Semplici, snelli e personalizzabili.</div>
+            </a>
+
+            <a href="old-languages/strumenti-dati-indice.html" class="card-link">
+                <div class="card"><strong>Strumenti Dati</strong>Per l'organizzazione e l'analisi massiva.</div>
+            </a>
+
+            <a href="old-languages/utility-indice.html" class="card-link">
+                <div class="card"><strong>Utility Ufficio</strong>Piccoli software per grandi risparmi di tempo.</div>
+            </a>
+
+            <a href="old-languages/didattica-indice.html" class="card-link">
+                <div class="card"><strong>Didattica</strong>Applicazioni tecniche a scopo formativo.</div>
+            </a>
+        </div>
+
+        <h2>Cosa offro per ogni progetto</h2>
+        <p>La trasparenza è fondamentale. Per ogni software o script presentato, troverai sempre una documentazione
+            chiara composta da:</p>
+        <div class="details">
+            <ul>
+                <li><strong>Descrizione completa:</strong> Lo scopo del software e il problema che risolve.</li>
+                <li><strong>Funzionalità principali:</strong> Cosa può fare concretamente l'applicazione.</li>
+                <li><strong>Requisiti tecnici:</strong> Sistema operativo o versioni di Excel necessarie.</li>
+                <li><strong>Disponibilità:</strong> Note sull'eventuale licenza d'uso o disponibilità commerciale.</li>
+            </ul>
+        </div>
+
+        <p style="margin-top: 30px;">
+            Se sei alla ricerca di una <strong>soluzione personalizzata</strong> basata su questi linguaggi o hai
+            bisogno di manutenzione su software esistenti, sentiti libero di contattarmi.
+        </p>
     </div>
 
-    <p style="margin-top: 30px;">
-        Se sei alla ricerca di una <strong>soluzione personalizzata</strong> basata su questi linguaggi o hai bisogno di manutenzione su software esistenti, sentiti libero di contattarmi.
-    </p>
-</div>
+    <footer>
+        &copy; <span id="anno-corrente"></span> Santo Colosi - Logica e Codice.
+    </footer>
 
-<footer>
-    &copy; <span id="anno-corrente"></span> Santo Colosi - Logica e Codice.
-</footer>
-
-<script>
-    document.getElementById('anno-corrente').innerHTML = new Date().getFullYear();
-</script>
+    <script>
+        document.getElementById('anno-corrente').innerHTML = new Date().getFullYear();
+    </script>
 
 </body>
+
 </html>

@@ -1,93 +1,226 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excel & VBA - Santo Colosi</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 0; background-color: #f4f4f9; }
-        header { background: #2c3e50; color: #ffffff; padding: 2.5rem 1rem; text-align: center; }
-        nav { background: #34495e; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; flex-wrap: wrap; }
-        nav a { color: white; text-decoration: none; padding: 15px 20px; display: block; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; transition: 0.3s; }
-        nav a:hover { background: #3498db; }
-        .container { background: #fff; padding: 30px; margin: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h2 { color: #2c3e50; border-bottom: 2px solid #e67e22; padding-bottom: 10px; margin-top: 30px; }
-        h3 { color: #2980b9; margin-top: 25px; }
-        .highlight { color: #e67e22; font-weight: bold; }
-        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background: #2c3e50;
+            color: #ffffff;
+            padding: 2.5rem 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background: #34495e;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #3498db;
+        }
+
+        .container {
+            background: #fff;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #e67e22;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: #2980b9;
+            margin-top: 25px;
+        }
+
+        .highlight {
+            color: #e67e22;
+            font-weight: bold;
+        }
+
         /* Box per le due anime della pagina */
-        .split-section { display: flex; gap: 20px; margin-top: 20px; flex-wrap: wrap; }
-        .box { flex: 1; min-width: 300px; padding: 20px; border-radius: 8px; border: 1px solid #ddd; }
-        .box-nocode { border-top: 5px solid #27ae60; background: #f9fffb; }
-        .box-vba { border-top: 5px solid #9b59b6; background: #fdf9ff; }
-        
-        .feature-list { list-style: none; padding: 0; }
-        .feature-list li { margin-bottom: 10px; padding-left: 25px; position: relative; }
-        .feature-list li::before { content: '✔'; position: absolute; left: 0; color: #27ae60; font-weight: bold; }
-        
-        footer { text-align: center; padding: 30px; font-size: 0.8rem; color: #7f8c8d; }
+        .split-section {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .box-nocode {
+            border-top: 5px solid #27ae60;
+            background: #f9fffb;
+        }
+
+        .box-vba {
+            border-top: 5px solid #9b59b6;
+            background: #fdf9ff;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.8rem;
+            color: #7f8c8d;
+        }
     </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Excel & VBA</h1>
-    <p>Dalla logica delle formule all'automazione intelligente</p>
-</header>
+    <header>
+        <h1>Excel & VBA</h1>
+        <p>Dalla logica delle formule all'automazione intelligente</p>
+    </header>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="chi-sono.html">Chi sono</a></li>
-        <li><a href="excel-vba.html">Excel & VBA</a></li>
-        <li><a href="old-languages.html">Old Languages</a></li>
-        <li><a href="app-commerciali.html">App Commerciali</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-    </ul>
-</nav>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="chi-sono.html">Chi sono</a></li>
+            <li><a href="excel-vba.html">Excel & VBA</a></li>
+            <li><a href="old-languages.html">Old Languages</a></li>
+            <li><a href="app-commerciali.html">App Commerciali</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+    </nav>
 
-<div class="container">
-    <h2>Tutorial, progetti e soluzioni pratiche</h2>
-    <p>In questa sezione raccolgo esercizi, esempi e progetti reali sviluppati con un unico obiettivo: <strong>aumentare la produttività semplificando il lavoro quotidiano</strong>. Che tu sia un principiante assoluto o un utente avanzato, qui troverai spunti per migliorare il tuo modo di gestire i dati.</p>
+    <div class="container">
+        <h2>Tutorial, progetti e soluzioni pratiche</h2>
+        <p>In questa sezione raccolgo esercizi, esempi e progetti reali sviluppati con un unico obiettivo:
+            <strong>aumentare la produttività semplificando il lavoro quotidiano</strong>. Che tu sia un principiante
+            assoluto o un utente avanzato, qui troverai spunti per migliorare il tuo modo di gestire i dati.</p>
 
-    <div class="split-section">
-        <div class="box box-nocode">
-            <h3>Excel "Puro" (No-Code)</h3>
-            <p>Sfruttare la potenza nativa di Excel senza scrivere una riga di codice. Ideale per chi vuole risultati immediati.</p>
-            <ul class="feature-list">
-                <li><strong>Tutorial Step-by-Step:</strong> Guide chiare per chi parte da zero.</li>
-                <li><strong>Formule Avanzate:</strong> Gestione dinamica con SE, CERCA.VERT, INDICE e CONFRONTA.</li>
-                <li><strong>Dashboard:</strong> Creazione di report visivi e moduli professionali.</li>
-            </ul>
-        </div>
+        <div class="split-section">
+            <div class="box box-nocode">
+                <h3>Excel "Puro" (No-Code)</h3>
+                <p>Sfruttare la potenza nativa di Excel senza scrivere una riga di codice. Ideale per chi vuole
+                    risultati immediati.</p>
+                <ul class="feature-list">
+                    <li>
+                        <a href="esercizi-excel-vba/tutorial-indice.html"><strong>Tutorial Step-by-Step:</strong></a>
+                        Guide chiare per chi parte da zero.
+                    </li>
+                    <li>
+                        <a href="esercizi-excel-vba/formule-avanzate.html"><strong>Formule Avanzate:</strong></a>
+                        Gestione dinamica con CERCA.VERT, INDICE e CONFRONTA e altre funzioni Database.
+                    </li>
+                    <li>
+                        <a href="esercizi-excel-vba/dashboard.html"><strong>Dashboard:</strong></a>
+                        Creazione di report visivi e moduli professionali.
+                    </li>
+                </ul>
+            </div>
 
-        <div class="box box-vba">
-            <h3>Il Potere del VBA</h3>
-            <p>Quando le formule non bastano più, entra in gioco l'automazione. Rendere automatico ciò che prima era ripetitivo.</p>
-            <ul class="feature-list">
-                <li><strong>Automazioni Reali:</strong> Esempi di macro applicabili alla vita lavorativa.</li>
-                <li><strong>UserForm & Moduli:</strong> Creare vere e proprie interfacce software dentro Excel.</li>
-                <li><strong>Codice Spiegato:</strong> Ogni riga di codice è commentata in modo semplice e accessibile.</li>
-            </ul>
+            <div class="box box-vba">
+                <h3>Il Potere del VBA</h3>
+                <p>Quando le formule non bastano più, entra in gioco l'automazione. Rendere automatico ciò che prima era
+                    ripetitivo.</p>
+                <ul class="feature-list">
+                    <li>
+                        <a href="esercizi-excel-vba/automazioni-vba.html"><strong>Automazioni Reali:</strong></a>
+                        Esempi di macro applicabili alla vita lavorativa.
+                    </li>
+                    <li>
+                        <a href="esercizi-excel-vba/userforms.html"><strong>UserForm & Moduli:</strong></a>
+                        Creare vere e proprie interfacce software dentro Excel.
+                    </li>
+                    <li>
+                        <a href="esercizi-excel-vba/codice-spiegato.html"><strong>Codice Spiegato:</strong></a>
+                        Ogni riga di codice è commentata in modo semplice e accessibile.
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 
     <h3>Perché questo approccio?</h3>
-    <p>Spesso si pensa che Excel sia solo una tabella o che il VBA sia troppo complesso. Il mio scopo è dimostrare che, con la giusta logica, chiunque può trasformare un semplice foglio di calcolo in uno <strong>strumento gestionale potente e chiaro</strong>. Impareremo insieme a "sporcarci le mani" partendo da casi reali: fatturazione, gestione magazzino e analisi dati commerciali.</p>
+    <p>Spesso si pensa che Excel sia solo una tabella o che il VBA sia troppo complesso. Il mio scopo è dimostrare che,
+        con la giusta logica, chiunque può trasformare un semplice foglio di calcolo in uno <strong>strumento gestionale
+            potente e chiaro</strong>. Impareremo insieme a "sporcarci le mani" partendo da casi reali: fatturazione,
+        gestione magazzino e analisi dati commerciali.</p>
 
     <p align="center" style="margin-top: 40px; font-style: italic;">
         "Il miglior modo per imparare a programmare è creare qualcosa di utile."
     </p>
-</div>
+    </div>
 
-<footer>
-    &copy; <span id="anno-corrente"></span> Santo Colosi - Logica e Codice.
-</footer>
+    <footer>
+        &copy; <span id="anno-corrente"></span> Santo Colosi - Logica e Codice.
+    </footer>
 
-<script>
-    document.getElementById('anno-corrente').innerHTML = new Date().getFullYear();
-</script>
+    <script>
+        document.getElementById('anno-corrente').innerHTML = new Date().getFullYear();
+    </script>
 
 </body>
+
 </html>

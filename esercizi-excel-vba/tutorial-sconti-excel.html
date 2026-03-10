@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esercizio Sconti e Percentuali - Santo Colosi</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 0; background-color: #f4f4f9; }
+    header { background: #2c3e50; color: #ffffff; padding: 2rem 1rem; text-align: center; }
+    nav { background: #34495e; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; padding: 15px 20px; display: block; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; transition: 0.3s; }
+    nav a:hover { background: #3498db; }
+    .container { background: #fff; padding: 30px; margin: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+    h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-top: 30px; }
+    .back-link { display: inline-block; margin-bottom: 20px; color: #3498db; text-decoration: none; font-weight: bold; }
+    .back-link:hover { text-decoration: underline; }
+    .formula-box { background: #f1f2f6; border-left: 5px solid #e67e22; padding: 15px; font-family: 'Courier New', monospace; margin: 15px 0; }
+    .excel-table { width: 100%; border-collapse: collapse; text-align: center; margin: 20px 0; }
+    .excel-table th, .excel-table td { border: 1px solid #ccc; padding: 8px; }
+    .header-cell { background-color: #ecf0f1; font-weight: bold; }
+    footer { text-align: center; padding: 30px; font-size: 0.8rem; color: #7f8c8d; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Tutorial Excel &ndash; Calcolare sconti e prezzi finali</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="tutorial-indice.html">Indice Tutorial</a></li>
+      <li><a href="../excel-vba.html">Excel &amp; VBA</a></li>
+      <li><a href="../contatti.html">Contatti</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <a href="../excel-vba.html" class="back-link">&larr; Torna all'elenco Excel &amp; VBA</a>
+
+    <p>
+      Nell'esercizio precedente abbiamo introdotto il calcolo dell'IVA. In questa lezione approfondiremo la gestione
+      delle percentuali applicandole al <strong>calcolo degli sconti commerciali</strong> e alla determinazione del prezzo finale di vendita.
+    </p>
+
+    <h2>Obiettivo dell'esercizio</h2>
+    <p>Imparare a calcolare uno sconto percentuale e il prezzo finale di un prodotto utilizzando le formule di Excel.</p>
+    
+    <p>Al termine dell'attivit&agrave; sarai in grado di:</p>
+    <ul>
+      <li>Utilizzare correttamente le percentuali nelle formule.</li>
+      <li>Trasformare una percentuale in valore monetario.</li>
+      <li>Determinare il prezzo netto finale.</li>
+    </ul>
+
+    <h2>1. Preparazione della tabella dati</h2>
+    <p>Apri Excel e inserisci i seguenti dati rispettando le posizioni indicate:</p>
+
+    <table class="excel-table">
+      <thead>
+        <tr class="header-cell">
+          <td>Rif. Riga</td>
+          <td>A (Prodotto)</td>
+          <td>B (Prezzo &euro;)</td>
+          <td>C (Sconto %)</td>
+          <td>D (Prezzo Finale)</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="header-cell">2</td>
+          <td>Penna</td>
+          <td>2,00</td>
+          <td>10%</td>
+          <td><em>(formula)</em></td>
+        </tr>
+        <tr>
+          <td class="header-cell">3</td>
+          <td>Quaderno</td>
+          <td>5,00</td>
+          <td>15%</td>
+          <td><em>(formula)</em></td>
+        </tr>
+        <tr>
+          <td class="header-cell">4</td>
+          <td>Zaino</td>
+          <td>30,00</td>
+          <td>20%</td>
+          <td><em>(formula)</em></td>
+        </tr>
+        <tr>
+          <td class="header-cell">5</td>
+          <td>Astuccio</td>
+          <td>12,00</td>
+          <td>10%</td>
+          <td><em>(formula)</em></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>2. Inserimento della formula</h2>
+    <p>Per ottenere il prezzo finale dobbiamo sottrarre il valore dello sconto dal prezzo iniziale.</p>
+
+    <p><strong>Passaggi:</strong></p>
+    <ol>
+      <li>Seleziona la cella <strong>D2</strong>.</li>
+      <li>Digita la formula:</li>
+    </ol>
+
+    <div class="formula-box">
+      =B2-(B2*C2)
+    </div>
+
+    <p>Dopo aver premuto <strong>Invio</strong>, Excel restituir&agrave; il valore <strong>1,8</strong>.</p>
+
+    <h2>3. Analisi della logica matematica</h2>
+    <p>Vediamo come ragiona Excel nella cella <strong>D2</strong>:</p>
+    <div class="formula-box">
+      <strong>B2</strong> (2,00) &rarr; Prezzo originale.<br>
+      <strong>B2 * C2</strong> (2,00 * 10%) &rarr; Calcola lo sconto (0,20 &euro;).<br>
+      <strong>B2 - 0,20</strong> &rarr; Risultato finale (1,80 &euro;).
+    </div>
+
+    <h2>Risultato finale atteso</h2>
+    <table class="excel-table" style="max-width: 400px; margin-left: 0;">
+      <tr class="header-cell">
+        <td>Prodotto</td>
+        <td>Risultato corretto (Colonna D)</td>
+      </tr>
+      <tr>
+        <td>Penna</td>
+        <td><strong>1,8</strong></td>
+      </tr>
+      <tr>
+        <td>Quaderno</td>
+        <td><strong>4,25</strong></td>
+      </tr>
+      <tr>
+        <td>Zaino</td>
+        <td><strong>24</strong></td>
+      </tr>
+      <tr>
+        <td>Astuccio</td>
+        <td><strong>10,8</strong></td>
+      </tr>
+    </table>
+
+    <h2>Competenze acquisite</h2>
+    <ul>
+      <li>Gestione dei formati percentuale.</li>
+      <li>Sviluppo di formule aritmetiche composte.</li>
+      <li>Uso del quadratino di riempimento per la copia rapida.</li>
+    </ul>
+  </div>
+
+  <footer>&copy; <span id="anno-corrente"></span> Santo Colosi - Logica e Codice.</footer>
+
+  <script type="text/javascript">
+    document.getElementById('anno-corrente').innerHTML = new Date().getFullYear();
+  </script>
+</body>
+</html>
